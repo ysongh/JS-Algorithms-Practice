@@ -1,3 +1,5 @@
+// Write a function that takes in a sorted array and returns the numbers of unique values in the array.
+
 const countUniqueValues = ar => {
     if(ar.length === 0){
         return 0;
