@@ -14,4 +14,4 @@ const areThereDuplicates = ar => {
     return false;
 };
 
-console.log(areThereDuplicates(['a', 'b', 'a']));
+console.log(areThereDuplicates(['a', 'b', 'a', 'c']));
