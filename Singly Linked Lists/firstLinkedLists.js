@@ -1,4 +1,4 @@
-// Write a singly linked lists that has a push method.
+// Write a singly linked lists
 
 class Node{
     constructor(val){
@@ -13,6 +13,8 @@ class SinglyLinkedList{
         this.tail = null;
         this.length = 0;
     }
+    
+    // Add new value at the end of the singly linked list
     push(val){
         let newNode = new Node(val);
         
@@ -27,6 +29,15 @@ class SinglyLinkedList{
         
         this.length++;
         return this;
+    }
+    
+    // Get all the values of each node.
+    traverse(){
+        let current = this.head;
+        while(current){
+            console.log(current.val);
+            current = current.next;
+        }
     }
 }
 
