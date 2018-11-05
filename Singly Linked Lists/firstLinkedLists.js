@@ -30,6 +30,23 @@ class SinglyLinkedList{
         this.length++;
         return this;
     }
+    // Remove the last node or value of the singly linked list
+    pop(){
+        if(this.head === null){
+            return undefined;
+        }
+        let current = this.head;
+        let temp = current;
+        
+        while(current.next){
+            temp = current;
+            current = current.next;
+        }
+        this.tail = temp;
+        this.tail.next = null;
+        this.length--;
+        return current;
+    }
     
     // Get all the values of each node.
     traverse(){
@@ -45,5 +62,6 @@ var list = new SinglyLinkedList();
 list.push("HELLO");
 list.push("GOODBYE");
 list.push("See You Next Time");
+list.pop();
 
 console.log(list);
