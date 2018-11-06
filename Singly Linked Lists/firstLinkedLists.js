@@ -65,15 +65,24 @@ class SinglyLinkedList{
             current = current.next;
         }
     }
+    
+    // Remove the first node and set the head to the next node.
+    shift(){
+        if(this.head === null){
+            return undefined;
+        }
+        let currentHead = this.head;
+        this.head = this.head.next;
+        this.length--;
+        
+        return currentHead.val;
+    }
 }
 
 var list = new SinglyLinkedList();
 list.push("HELLO");
 list.push("GOODBYE");
 list.push("See You Next Time");
-list.pop();
-list.pop();
-list.pop();
-list.pop();
+list.shift();
 
 console.log(list);
