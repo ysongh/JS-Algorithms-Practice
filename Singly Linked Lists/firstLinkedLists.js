@@ -39,12 +39,21 @@ class SinglyLinkedList{
         let temp = current;
         
         while(current.next){
+            // this node is before current
             temp = current;
+            // move current to next node
             current = current.next;
         }
         this.tail = temp;
+        // remove the pointer
         this.tail.next = null;
         this.length--;
+        
+        if(this.length === 0){
+            this.head = null;
+            this.tail = null;
+        }
+        
         return current;
     }
     
@@ -62,6 +71,9 @@ var list = new SinglyLinkedList();
 list.push("HELLO");
 list.push("GOODBYE");
 list.push("See You Next Time");
+list.pop();
+list.pop();
+list.pop();
 list.pop();
 
 console.log(list);
