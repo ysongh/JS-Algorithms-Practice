@@ -90,14 +90,16 @@ class SinglyLinkedList{
         
         if(this.head === null){
             this.head = newNode;
-            this.tail = newNode;
+            this.tail = this.head;
         }
         else{
-            this.head.next = this.head;
+            newNode.next = this.head;
             this.head = newNode;
         }
         
         this.length++;
+        
+        // return the whole list
         return this;
     }
 }
