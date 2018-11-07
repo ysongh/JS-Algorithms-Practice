@@ -83,14 +83,29 @@ class SinglyLinkedList{
         
         return currentHead;
     }
+    
+    // Add new node to the beginning of the list.
+    unshift(val){
+        let newNode = new Node(val);
+        
+        if(this.head === null){
+            this.head = newNode;
+            this.tail = newNode;
+        }
+        else{
+            this.head.next = this.head;
+            this.head = newNode;
+        }
+        
+        this.length++;
+        return this;
+    }
 }
 
 var list = new SinglyLinkedList();
 list.push("HELLO");
 list.push("GOODBYE");
 list.push("See You Next Time");
-list.shift();
-list.shift();
-list.shift();
+list.unshift("Good Morning");
 
 console.log(list);
