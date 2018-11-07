@@ -102,6 +102,20 @@ class SinglyLinkedList{
         // return the whole list
         return this;
     }
+    
+    // Get the node based on target index
+    getByIndex(index){
+        if(index < 0 || index >= this.length){
+            return null;
+        }
+        let current = this.head;
+        let count = 0;
+        while(count <= index){
+            current = current.next;
+            count++;
+        }
+        return current;
+    }
 }
 
 var list = new SinglyLinkedList();
@@ -109,5 +123,6 @@ list.push("HELLO");
 list.push("GOODBYE");
 list.push("See You Next Time");
 list.unshift("Good Morning");
+list.getByIndex(1);
 
 console.log(list);
