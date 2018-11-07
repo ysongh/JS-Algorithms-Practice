@@ -72,10 +72,16 @@ class SinglyLinkedList{
             return undefined;
         }
         let currentHead = this.head;
-        this.head = this.head.next;
+        this.head = currentHead.next;
         this.length--;
         
-        return currentHead.val;
+        if(this.length === 0){
+            this.head = null;
+            this.tail = null;
+        }
+        
+        
+        return currentHead;
     }
 }
 
@@ -83,6 +89,8 @@ var list = new SinglyLinkedList();
 list.push("HELLO");
 list.push("GOODBYE");
 list.push("See You Next Time");
+list.shift();
+list.shift();
 list.shift();
 
 console.log(list);
