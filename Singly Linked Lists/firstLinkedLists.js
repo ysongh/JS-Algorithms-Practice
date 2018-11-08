@@ -116,13 +116,17 @@ class SinglyLinkedList{
         }
         return current;
     }
+    
+    // Change the node value based on target index
+    setByIndex(index, val){
+        let foundNode = this.getByIndex(index);
+        if(foundNode){
+            foundNode.val = val;
+            return true;
+        }
+        return false;
+    }
 }
 
 var list = new SinglyLinkedList();
-list.push("HELLO");
-list.push("GOODBYE");
-list.push("See You Next Time");
-list.unshift("Good Morning");
-list.getByIndex(1);
-
 console.log(list);
