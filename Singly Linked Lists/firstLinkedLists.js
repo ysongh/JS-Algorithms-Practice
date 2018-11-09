@@ -126,6 +126,21 @@ class SinglyLinkedList{
         }
         return false;
     }
+    
+    // Insert the node based on target index
+    insert(index, val){
+        if(index < 0 || index > this.length){
+            return false;
+        }
+        else{
+            let newNode = new Node(val);
+            let foundNode = this.getByIndex(index - 1);
+            foundNode.next = newNode;
+            newNode.next = foundNode;
+            this.length++;
+            return true;
+        }
+    }
 }
 
 var list = new SinglyLinkedList();
