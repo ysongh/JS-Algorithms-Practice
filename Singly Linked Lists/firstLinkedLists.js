@@ -132,14 +132,21 @@ class SinglyLinkedList{
         if(index < 0 || index > this.length){
             return false;
         }
-        else{
-            let newNode = new Node(val);
-            let foundNode = this.getByIndex(index - 1);
-            foundNode.next = newNode;
-            newNode.next = foundNode;
-            this.length++;
-            return true;
+        if(index === this.length){
+            // !! convert it to boolean
+            return !!this.push(val);
         }
+        if(index === 0){
+            return !!this.unshift(val);
+        }
+        
+        let newNode = new Node(val);
+        let foundNode = this.getByIndex(index - 1);
+        let temp = foundNode.next;
+        foundNode.next = newNode;
+        newNode.next = temp;
+        this.length++;
+        return true;
     }
 }
 
