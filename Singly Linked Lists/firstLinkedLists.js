@@ -148,6 +148,24 @@ class SinglyLinkedList{
         this.length++;
         return true;
     }
+    // Remove the node based on target index
+    remove(index){
+        if(index < 0 || index >= this.length){
+            return undefined;
+        }
+        if(index === this.length - 1){
+            return this.pop();
+        }
+        if(index === 0){
+            return this.shift();
+        }
+        let foundNode = this.getByIndex(index - 1);
+        let removeNode = foundNode.next;
+        foundNode.next = removeNode.next;
+        this.length--;
+        
+        return removeNode;
+    }
 }
 
 var list = new SinglyLinkedList();
