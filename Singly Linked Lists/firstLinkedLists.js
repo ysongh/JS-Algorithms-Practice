@@ -166,6 +166,26 @@ class SinglyLinkedList{
         
         return removeNode;
     }
+    
+    // Reverse the singly linked list
+    reverse(){
+        let node = this.head;
+        this.head = this.tail;
+        this.tail = node;
+        
+        let next = null;
+        let prev = null;
+        
+        
+        while(node){
+            next = node.next;
+            node.next = prev;
+            prev = node;
+            node = next;
+        }
+        
+        return this;
+    }
 }
 
 var list = new SinglyLinkedList();
