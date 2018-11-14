@@ -82,6 +82,28 @@ class DoublyLinkedList{
         this.length++;
         return this;
     }
+    
+    // Access a node in the list by its position
+    get(index){
+        if(index < 0 || index >= this.length){
+            return null;
+        }
+        let middle = this.length / 2;
+        if(index <= middle){
+            let current = this.head;
+            for(let count = 0; count < index; count++){
+                current = current.next;
+            }
+            return current;
+        }
+        if(index > middle){
+            let current = this.tail;
+            for(let count = this.length - 1; count > index; count--){
+                current = current.prev;
+            }
+            return current;
+        }
+    }
 }
 
 let list = new DoublyLinkedList();
