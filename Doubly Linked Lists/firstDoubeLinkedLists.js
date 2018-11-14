@@ -104,6 +104,18 @@ class DoublyLinkedList{
             return current;
         }
     }
+    
+    // Update the value of a node in the list by its poisition
+    set(val, index){
+        let foundNode = this.get(index);
+        if(foundNode !== null){
+            foundNode.val = val;
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }
 
 let list = new DoublyLinkedList();
