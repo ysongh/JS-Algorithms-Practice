@@ -116,6 +116,29 @@ class DoublyLinkedList{
             return false;
         }
     }
+    
+    // Add a new node in the list by a certain position
+    insert(val, index){
+        if(index < 0 || index >= this.length){
+            return false;
+        }
+        if(index === 0){
+            return !!this.unshift(val);
+        }
+        // after the tail
+        if(index === this.length){
+            return !!this.push(val);
+        }
+        let newNode = new Node(val);
+        let beforeNode = this.get(index - 1);
+        let afterNode = beforeNode.next;
+        
+        beforeNode.next = newNode, newNode.prev = beforeNode;
+        newNode.next = afterNode, afterNode.prev = newNode;
+        this.length++;
+        return true;
+    }
+    
 }
 
 let list = new DoublyLinkedList();
