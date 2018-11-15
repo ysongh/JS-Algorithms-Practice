@@ -5,6 +5,7 @@ class Node{
     }
 }
 
+// this is constant time
 class Stack{
     constructor(){
         this.first = null;
@@ -26,6 +27,24 @@ class Stack{
         }
         this.size++;
         return this.size;
+    }
+    
+    // Remove the node at the beginning of the stack
+    pop(){
+        if(this.size === 0){
+            return null;
+        }
+        let temp = this.first;
+        if(this.size === 1){
+            this.first = null;
+            this.last = null;
+        }
+        else{
+            this.first = this.first.next;
+        }
+        this.size--;
+        return temp.val;
+        
     }
 }
 
