@@ -45,6 +45,38 @@ class BinarySearchTree{
             }
         }
     }
+    
+    // search for a node in the tree
+    find(value){
+        if(this.root === null){
+            return false;
+        }
+        else{
+            let current = this.root;
+            let found = false;
+            while(!found){
+                if(value === current.value){
+                    return true;
+                }
+                else if(value > current.value){
+                    if(current.right === null){
+                        return false;
+                    }
+                    else{
+                        current = current.right;
+                    }
+                }
+                else{
+                    if(current.left === null){
+                        return false;
+                    }
+                    else{
+                        current = current.left;
+                    }
+                }
+            }
+        }
+    }
 }
 
 const bst = new BinarySearchTree();
