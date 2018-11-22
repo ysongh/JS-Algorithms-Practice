@@ -62,6 +62,24 @@ class DepthFirstSearch{
         traverse(current);
         return list;
     }
+    
+    // traverse the tree by visiting every node from bottom to top
+    postOrder(){
+        let list = [];
+        let current = this.root;
+        
+        function traverse(current){
+            if(current.left){
+                traverse(current.left);
+            }
+            if(current.right){
+                traverse(current.right);
+            }
+            list.push(current.value);
+        }
+        traverse(current);
+        return list;
+    }
 }
 
 const dfs = new DepthFirstSearch();
