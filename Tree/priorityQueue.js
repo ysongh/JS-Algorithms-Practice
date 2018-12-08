@@ -46,7 +46,6 @@ class PriorityQueue{
         return oldRoot;
     }
     
-    // move the value down if the parent value is less than it child value.
     bubbleDown(){
         let parentIndex = 0;
         let parentValue = this.values[0];
