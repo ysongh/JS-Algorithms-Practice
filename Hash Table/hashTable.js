@@ -50,6 +50,21 @@ class HashTable{
         }
         return  valuesArr;
     }
+    
+    // get all the keys
+    keys(){
+        let keysArr = [];
+        for(let i = 0; i < this.keyMap.length; i++){
+            if(this.keyMap[i]){
+                for(let k = 0; k < this.keyMap[i].length; k++){
+                    if(!keysArr.includes(this.keyMap[i][k][0])){
+                        keysArr.push(this.keyMap[i][k][0]);
+                    }
+                }
+            }
+        }
+        return  keysArr;
+    }
 }
 
 let ht = new HashTable();
