@@ -35,6 +35,21 @@ class HashTable{
         }
         return undefined;
     }
+    
+    // get all the values
+    values(){
+        let valuesArr = [];
+        for(let i = 0; i < this.keyMap.length; i++){
+            if(this.keyMap[i]){
+                for(let k = 0; k < this.keyMap[i].length; k++){
+                    if(!valuesArr.includes(this.keyMap[i][k][1])){
+                        valuesArr.push(this.keyMap[i][k][1]);
+                    }
+                }
+            }
+        }
+        return  valuesArr;
+    }
 }
 
 let ht = new HashTable();
