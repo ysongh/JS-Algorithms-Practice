@@ -10,7 +10,7 @@ const merge = (arr1, arr2) => {
             newArray.push(arr1[i]);
             i++;
         }
-        if(arr1[i] > arr2[j]){
+        if(arr1[i] >= arr2[j]){
             newArray.push(arr2[j]);
             j++;
         }
@@ -27,4 +27,4 @@ const merge = (arr1, arr2) => {
     return newArray;
 };
 
-console.log(merge([2, 4, 8, 10, 12], [1, 6, 9]));
+console.log(merge([2, 4, 8, 10, 12], [1, 8, 9]));
