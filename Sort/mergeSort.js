@@ -1,3 +1,14 @@
+const mergeSort = arr => {
+    if(arr.length <= 1){
+        return arr;
+    }
+    let midpoint = Math.floor(arr.length / 2);
+    let left = mergeSort(arr.slice(0, midpoint));
+    let right = mergeSort(arr.slice(midpoint));
+    
+    return merge(left, right);
+};
+
 const merge = (arr1, arr2) => {
     const newArray = [];
     let len1 = arr1.length;
@@ -27,4 +38,4 @@ const merge = (arr1, arr2) => {
     return newArray;
 };
 
-console.log(merge([2, 4, 8, 10, 12], [1, 8, 9]));
+console.log(mergeSort([8, 5, 99, 76, 102, 3, 67, 55]));
