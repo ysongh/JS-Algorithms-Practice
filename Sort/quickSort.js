@@ -1,7 +1,7 @@
 const pivot = (arr, start, end) => {
     let targetPivot = start + 1;
     let indexPivot = 0;
-    for(let i = 1; i < end; i++){
+    for(let i = start + 1; i < end; i++){
         if(arr[start] > arr[i]){
             const temp = arr[i];
             arr[i] = arr[targetPivot];
