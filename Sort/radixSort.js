@@ -6,7 +6,14 @@ const getDigit = (num, i) => {
     return digit;
 };
 
+const digitCount = num => {
+    const numString = num.toString();
+    return numString.length;
+};
+
 console.log(getDigit(1234, 0));
 console.log(getDigit(1234, 1));
 console.log(getDigit(1234, 2));
 console.log(getDigit(1234, 3));
+
+console.log(digitCount(1234));
