@@ -1,3 +1,18 @@
+const radixSort = arr => {
+    const len = arr.length;
+    const maxLen = mostDigits(arr);
+    for(let k = 0; k < maxLen; k++){
+        let buckets = [[], [], [], [], [], [], [], [], [], [],];
+        for(let i = 0; i < len; i++){
+            let num = getDigit(arr[i], k);
+            buckets[num].push(arr[i]);
+        }
+        arr = [].concat(...buckets);
+    }
+    
+    return arr;
+};
+
 const getDigit = (num, i) => {
     const divideBy = Math.pow(10, i);
     const total = num / divideBy;
@@ -25,11 +40,4 @@ const mostDigits = arr => {
     return maxDigits;
 };
 
-console.log(getDigit(1234, 0));
-console.log(getDigit(1234, 1));
-console.log(getDigit(1234, 2));
-console.log(getDigit(1234, 3));
-
-console.log(digitCount(1234));
-
-console.log(mostDigits([1234, 3, 56, 145, 45, 86532]));
+console.log(radixSort([1234, 3, 56, 145, 45, 86532]));
