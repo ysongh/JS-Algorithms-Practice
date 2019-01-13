@@ -18,7 +18,7 @@ class Graph{
         this.adjacencyList[vertex2].push(vertex1);
     }
     
-    //remove a vertex from adjacencyList
+    //remove an edge from adjacencyList
     removeEdge(vertex1, vertex2){
         this.adjacencyList[vertex1] = this.adjacencyList[vertex1].filter(
             vertex => vertex !== vertex2
@@ -26,6 +26,15 @@ class Graph{
         this.adjacencyList[vertex2] = this.adjacencyList[vertex2].filter(
             vertex => vertex !== vertex1
         );
+    }
+    
+    //remove a vertex from adjacencyList
+    removeVertex(vertex){
+        while(this.adjacencyList[vertex].length){
+            const adjacencyVertex = this.adjacencyList[vertex].pop();
+            this.removeEdge(vertex, adjacencyVertex);
+        }
+        delete this.adjacencyList[vertex];
     }
 }
 
