@@ -40,6 +40,27 @@ class Graph{
        
        return list;
     }
+    
+    // using iterative
+    dfsIterative(start){
+        const queue = [start];
+        const list = [];
+        const visited = {};
+        visited[start] = true;
+        
+        while(queue.length > 0){
+            let vertex = queue.shift();
+            list.push(vertex);
+            
+            this.adjacencyList[vertex].forEach(adjacent  => {
+                if(!visited[adjacent]){
+                    visited[adjacent] = true;
+                    queue.push(adjacent);
+                }
+            });
+        }
+        return list;
+    }
 }
 
 const g = new Graph();
