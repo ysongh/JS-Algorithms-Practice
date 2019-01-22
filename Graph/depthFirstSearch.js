@@ -43,19 +43,19 @@ class Graph{
     
     // using iterative
     dfsIterative(start){
-        const queue = [start];
+        const stack = [start];
         const list = [];
         const visited = {};
         visited[start] = true;
         
-        while(queue.length > 0){
-            let vertex = queue.shift();
+        while(stack.length > 0){
+            let vertex = stack.pop();
             list.push(vertex);
             
             this.adjacencyList[vertex].forEach(adjacent  => {
                 if(!visited[adjacent]){
                     visited[adjacent] = true;
-                    queue.push(adjacent);
+                    stack.push(adjacent);
                 }
             });
         }
