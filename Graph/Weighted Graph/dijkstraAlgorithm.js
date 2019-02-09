@@ -1,3 +1,18 @@
+class PriorityQueue{
+    constructor(){
+        this.list = [];
+    }
+    
+    enqueue(value, priority){
+        this.list.push({value, priority});
+    }
+    
+    dequeue(){
+        this.list.shift();
+    }
+    
+}
+
 class WeightedGraph{
     constructor(){
         this.adjacencyList = {};
