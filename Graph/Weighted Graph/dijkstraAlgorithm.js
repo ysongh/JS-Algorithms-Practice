@@ -5,10 +5,15 @@ class PriorityQueue{
     
     enqueue(value, priority){
         this.list.push({value, priority});
+        this.sort();
     }
     
     dequeue(){
         this.list.shift();
+    }
+    
+    sort(){
+        this.list.sort((x, y) => x.priority - y.priority);
     }
     
 }
